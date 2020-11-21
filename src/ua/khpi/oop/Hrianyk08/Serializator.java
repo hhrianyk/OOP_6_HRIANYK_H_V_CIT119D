@@ -1,7 +1,7 @@
 /**
  * @author <√ÂÓ„iÈ>
  * /**
- * \brief L6
+ * \brief L8
  * 	\author Heorhii Hrianyk
  * 	\version 1.0
  * 	\date   2020 ≥Í
@@ -36,24 +36,24 @@ public class Serializator {
 	{
 		boolean flag=false;
 		
-		JFileChooser fileopen = new JFileChooser(); 
+		/*JFileChooser fileopen = new JFileChooser(); 
 		
 		fileopen.setCurrentDirectory(new File("C:/Users/‰ÓÏ/Documents/Java seve"));
 		 		 fileopen.showDialog(null, "«·ÂÂ„ÚË  Ù‡ÈÎ");
 		 	 
 		File file =  fileopen.getSelectedFile() ;///pathname
+		 */
 		ObjectOutputStream oos=null;
 		
 		try {
 			 XMLEncoder encoder = new XMLEncoder(
 					 new BufferedOutputStream(
-					 new FileOutputStream( fileopen.getSelectedFile()+".xml")));
+					 new FileOutputStream( Console_File.MenuFillOut()+".xml")));
  
 			 encoder.writeObject(container);
-			 
 			 encoder.close(); 
 			 
-		FileOutputStream fos=new FileOutputStream(file);
+		FileOutputStream fos=new FileOutputStream(Console_File.MenuFillOut());
 		if(fos!=null) {
 			oos= new ObjectOutputStream(fos);
 			oos.writeObject(container);
@@ -69,16 +69,17 @@ public class Serializator {
 	}
 	static public —ontainer deserializtion() {
 		—ontainer container=null;
-		
+	 
 		JFileChooser fileopen = new JFileChooser(); 
 		fileopen.setCurrentDirectory(new File("C:/Users/‰ÓÏ/Documents/Java seve"));
 	     fileopen.showDialog(null, "¬≥‰ÍËÚË  Ù‡ÈÎ");
       
       
 		 File file =  fileopen.getSelectedFile() ; ///pathname
+		  
 		 ObjectInputStream ois=null;
 		 try {
-			FileInputStream fis=new FileInputStream(file);
+			FileInputStream fis=new FileInputStream(fileopen.getSelectedFile());
 		
 			if(fis!=null) {
 				ois= new ObjectInputStream(fis);
@@ -97,21 +98,21 @@ public class Serializator {
 	
 	public —ontainer deserializtionXML() {
 		 —ontainer container = null;
-		
+		/*
 		JFileChooser fileopen = new JFileChooser(); 
 		 FileNameExtensionFilter filter = new FileNameExtensionFilter(
 	              "*.xml", "xml");
-			fileopen.setCurrentDirectory(new File("C:/Users/‰ÓÏ/Documents/Java seve"));
+			fileopen.setCurrentDirectory(new File("C:/Users/‰ÓÏ/Documents"));
 			 fileopen.setFileSelectionMode(JFileChooser.FILES_ONLY);
 			 fileopen.setFileFilter(filter);
  
 	     fileopen.showDialog(null, "¬≥‰ÍËÚË *.xml Ù‡ÈÎ");
-      
- 
+      */
+	  
 		 try {
 			 XMLDecoder decoder = new XMLDecoder(
 					    new BufferedInputStream(
-					    new FileInputStream(fileopen.getSelectedFile())));
+					    new FileInputStream(Console_File.MenuFillIn()+".xml")));
 
 			var b = (—ontainer ) decoder.readObject();
 			 
