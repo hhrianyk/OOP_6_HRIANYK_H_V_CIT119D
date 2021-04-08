@@ -21,7 +21,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="Sigin" layoutX="167.0" layoutY="110.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="163.0" text="Sigin">
+            <Button fx:id="Sigin" layoutX="167.0" layoutY="110.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="163.0" text="Sign in">
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
